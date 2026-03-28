@@ -4,7 +4,7 @@
 </script>
 
 <div class="h-screen w-screen overflow-hidden">
-	<Canvas>
+	<Canvas shadows>
 		<Scene />
 	</Canvas>
 </div>
