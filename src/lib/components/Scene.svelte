@@ -19,7 +19,7 @@
 	/>
 </T.PerspectiveCamera>
 
-<Environment url="/ferndale_studio_01_4k.hdr" />
+<Environment url="/monochrome_studio_04_4k.hdr" />
 <T.Mesh position={[0, -0.93, 0]} rotation={[-Math.PI / 2, 0, 0]}>
 	<T.CircleGeometry args={[0.8, 64]} />
 	<T.MeshStandardMaterial color="#000000" transparent opacity={0.5} roughness={1} metalness={0} />
