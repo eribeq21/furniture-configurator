@@ -8,7 +8,7 @@
 	<OrbitControls />
 </T.PerspectiveCamera>
 
-<Environment
-  url="/ferndale_studio_01_4k.hdr"
-/>
-<Furniture />
+<Environment url="/ferndale_studio_01_4k.hdr" />
+
+<!-- Position of the furniture -->
+<Furniture position={[0, -1, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
