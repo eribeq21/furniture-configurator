@@ -5,7 +5,7 @@
 </script>
 
 <T.PerspectiveCamera makeDefault position={[3, 2, 5]} fov={50}>
-	<OrbitControls />
+	<OrbitControls minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
 </T.PerspectiveCamera>
 
 <Environment url="/ferndale_studio_01_4k.hdr" />
