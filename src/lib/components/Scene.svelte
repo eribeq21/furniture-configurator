@@ -1,6 +1,6 @@
 <script>
 	import { T } from '@threlte/core';
-	import { OrbitControls } from '@threlte/extras';
+	import { OrbitControls, Environment } from '@threlte/extras';
 	import Furniture from './Furniture.svelte';
 </script>
 
@@ -8,7 +8,7 @@
 	<OrbitControls />
 </T.PerspectiveCamera>
 
-<T.AmbientLight intensity={0.5} />
-<T.DirectionalLight position={[5, 10, 5]} intensity={1} />
-
+<Environment
+  url="/ferndale_studio_01_4k.hdr"
+/>
 <Furniture />
