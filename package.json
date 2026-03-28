@@ -31,5 +31,11 @@
 		"svelte": "^5.54.0",
 		"tailwindcss": "^4.1.18",
 		"vite": "^7.3.1"
+	},
+	"dependencies": {
+		"@threlte/core": "^8.5.3",
+		"@threlte/extras": "^9.13.0",
+		"@types/three": "^0.183.1",
+		"three": "^0.183.2"
 	}
 }
