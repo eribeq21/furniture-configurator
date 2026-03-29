@@ -23,6 +23,8 @@
 
 	function applySettings(texMap) {
 		Object.values(texMap).forEach((tex) => {
+			if (!tex || typeof tex !== 'object' || !('wrapS' in tex)) return;
+
 			tex.wrapS = RepeatWrapping;
 			tex.wrapT = RepeatWrapping;
 			tex.repeat.set(1.5, 1.5);
@@ -55,6 +57,8 @@
 	{#await gltf}
 		{@render fallback?.()}
 	{:then gltf}
+	    {console.log('GLB nodes:', Object.keys(gltf.nodes))}
+
 		{#await textures[material] then tex}
 			<T.Mesh
 				castShadow
