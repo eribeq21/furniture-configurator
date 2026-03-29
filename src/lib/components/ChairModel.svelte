@@ -10,10 +10,11 @@
 		ref = $bindable(),
 		seatColor = '#f0ece6',
 		material = 'cotton',
+		baseStyle = 'pedestal',
 		...props
 	} = $props();
 
-	const gltf = useGltf('/real_furniture.glb');
+	const gltf = useGltf('/Chair_Blender_ITP.glb');
 
 	const materialProps = {
 		cotton: { roughness: 0.95, normalScale: 0.1, envMapIntensity: 0.2 },
@@ -36,7 +37,10 @@
 
 	const textures = {
 		cotton: useTexture(
-			{ roughnessMap: '/textures/cotton/roughness.jpg', normalMap: '/textures/cotton/normal.jpg' },
+			{
+				roughnessMap: '/textures/cotton/roughness.jpg',
+				normalMap: '/textures/cotton/normal.jpg'
+			},
 			{ transform: applySettings }
 		),
 		leather: useTexture(
@@ -47,19 +51,21 @@
 			{ transform: applySettings }
 		),
 		velvet: useTexture(
-			{ roughnessMap: '/textures/velvet/roughness.jpg', normalMap: '/textures/velvet/normal.jpg' },
+			{
+				roughnessMap: '/textures/velvet/roughness.jpg',
+				normalMap: '/textures/velvet/normal.jpg'
+			},
 			{ transform: applySettings }
 		)
 	};
 </script>
- 
+
 <T.Group bind:ref dispose={false} {...props}>
 	{#await gltf}
 		{@render fallback?.()}
 	{:then gltf}
-	    {console.log('GLB nodes:', Object.keys(gltf.nodes))}
-
 		{#await textures[material] then tex}
+			<!-- shared chair body -->
 			<T.Mesh
 				castShadow
 				receiveShadow
@@ -77,14 +83,28 @@
 				/>
 			</T.Mesh>
 		{/await}
-		<T.Mesh
-			castShadow
-			receiveShadow
-			geometry={gltf.nodes.chair_stand.geometry}
-			material={gltf.materials.Stand}
-			position={[0, 0.75, 0]}
-			scale={0.09}
-		/>
+
+		<!-- conditional stand -->
+		{#if baseStyle === 'pedestal'}
+			<T.Mesh
+				castShadow
+				receiveShadow
+				geometry={gltf.nodes.pedestal_chair_stand.geometry}
+				material={gltf.materials['Stand.001']}
+				position={[0, 0.75, 0]}
+				scale={0.09}
+			/>
+		{:else if baseStyle === 'rotating'}
+			<T.Mesh
+				castShadow
+				receiveShadow
+				geometry={gltf.nodes.rotating_chair_stand.geometry}
+				material={gltf.nodes.rotating_chair_stand.material}
+				position={[0.08, 0.05, 0]}
+				rotation={[-Math.PI, 1.3, -Math.PI]}
+				scale={1.21}
+			/>
+		{/if}
 	{:catch err}
 		{@render error?.({ error: err })}
 	{/await}
