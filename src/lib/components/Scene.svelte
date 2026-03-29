@@ -1,7 +1,7 @@
 <script>
 	import { T } from '@threlte/core';
 	import { OrbitControls, Environment, ContactShadows } from '@threlte/extras';
-	import Furniture from './Furniture.svelte';
+	import FurnitureModel from './FurnitureModel.svelte';
 </script>
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
@@ -36,4 +36,4 @@
 />
 
 <!-- Position of the furniture -->
-<Furniture position={[0, -1, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
+<FurnitureModel position={[0, -1, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
