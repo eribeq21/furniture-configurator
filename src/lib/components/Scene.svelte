@@ -1,11 +1,19 @@
 <script>
 	import { T } from '@threlte/core';
-	import { OrbitControls, Environment, ContactShadows, Float, SoftShadows, interactivity } from '@threlte/extras';
+	import {
+		OrbitControls,
+		Environment,
+		ContactShadows,
+		Float,
+		SoftShadows,
+		interactivity
+	} from '@threlte/extras';
+
 	import FurnitureModel from './FurnitureModel.svelte';
+	import RotatingChairModel from './RotatingChairModel.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	interactivity();
-
 </script>
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
@@ -23,12 +31,9 @@
 	/>
 </T.PerspectiveCamera>
 
-
 <SoftShadows size={25} samples={16} focus={0.5} />
-
 <Environment url="/monochrome_studio_04_4k.hdr" />
 
-<!-- Fake soft ground shadow -->
 <ContactShadows
 	position={[0, -1.01, 0]}
 	frames={200}
@@ -39,12 +44,20 @@
 	color="#000000"
 />
 
-<!-- Position of the furniture -->
 <Float speed={0.6} floatIntensity={0.25}>
-	<FurnitureModel
-		position={[0, -1, 0]}
-		rotation={[0, 0, 0]}
-		scale={[1, 1, 1]}
-		seatColor={config.seatColor}
-	/>
+	{#if config.selectedModel === 'furniture'}
+		<FurnitureModel
+			position={[0, -1, 0]}
+			rotation={[0, 0, 0]}
+			scale={[1, 1, 1]}
+			seatColor={config.seatColor}
+		/>
+	{:else if config.selectedModel === 'rotating-chair'}
+		<RotatingChairModel
+			position={[0, -1, 0]}
+			rotation={[0, 0, 0]}
+			scale={[1, 1, 1]}
+			seatColor={config.seatColor}
+		/>
+	{/if}
 </Float>
