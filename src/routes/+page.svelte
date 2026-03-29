@@ -4,6 +4,7 @@
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import CameraPresets from '$lib/components/CameraPresets.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
+	import CameraButtons from '$lib/components/CameraButtons.svelte';
 
 	function togglePillow() {
 		config.pillow = !config.pillow;
@@ -44,7 +45,7 @@
 
 				<!-- subtle selected badge -->
 				<div
-					class={`absolute right-4 top-4 flex h-7 w-7 items-center justify-center rounded-full border text-[10px] font-semibold transition-all duration-300 ${
+					class={`absolute top-4 right-4 flex h-7 w-7 items-center justify-center rounded-full border text-[10px] font-semibold transition-all duration-300 ${
 						config.pillow
 							? 'border-white/70 bg-white text-black'
 							: 'border-white/20 bg-black/30 text-white/0 group-hover:text-white/70'
@@ -55,15 +56,21 @@
 
 				<!-- bottom overlay label -->
 				<div
-					class={`pointer-events-none absolute inset-x-2 bottom-2 rounded-2xl px-3 py-2 text-center text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
-						config.pillow
-							? 'bg-black/45 text-white'
-							: 'bg-black/30 text-white/65'
+					class={`pointer-events-none absolute inset-x-2 bottom-2 rounded-2xl px-3 py-2 text-center text-[11px] font-semibold tracking-[0.18em] uppercase transition-all duration-300 ${
+						config.pillow ? 'bg-black/45 text-white' : 'bg-black/30 text-white/65'
 					}`}
 				>
 					Pillow
 				</div>
 			</button>
+		</div>
+		<div class="absolute right-4 bottom-6 z-10">
+			<CameraButtons
+				zoomIn={config.zoomIn}
+				zoomOut={config.zoomOut}
+				rotateLeft={config.rotateLeft}
+				rotateRight={config.rotateRight}
+			/>
 		</div>
 	</div>
 
