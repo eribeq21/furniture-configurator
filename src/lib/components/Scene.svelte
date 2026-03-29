@@ -1,11 +1,17 @@
 <script>
 	import { T } from '@threlte/core';
-	import { OrbitControls, Environment, ContactShadows, Float, SoftShadows, interactivity } from '@threlte/extras';
+	import {
+		OrbitControls,
+		Environment,
+		ContactShadows,
+		Float,
+		SoftShadows,
+		interactivity
+	} from '@threlte/extras';
 	import FurnitureModel from './FurnitureModel.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	interactivity();
-
 </script>
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
@@ -23,10 +29,9 @@
 	/>
 </T.PerspectiveCamera>
 
-
 <SoftShadows size={25} samples={16} focus={0.5} />
 
-<Environment url="/monochrome_studio_04_4k.hdr" />
+<Environment url="/hdr/monochrome_studio_04_4k.hdr" />
 
 <!-- Fake soft ground shadow -->
 <ContactShadows
@@ -46,5 +51,6 @@
 		rotation={[0, 0, 0]}
 		scale={[1, 1, 1]}
 		seatColor={config.seatColor}
+		material={config.material}
 	/>
 </Float>
