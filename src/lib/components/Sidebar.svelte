@@ -34,7 +34,7 @@
 
 	<!-- Material section -->
 	<div class="border-b border-gray-200 px-5 py-4">
-		<p class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-gray-400">Material</p>
+		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Material</p>
 		<div class="flex gap-2">
 			{#each ['cotton', 'leather', 'velvet'] as mat (mat)}
 				<button
@@ -54,7 +54,7 @@
 
 	<!-- Color section -->
 	<div class="border-b border-gray-200 px-5 py-4">
-		<p class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-gray-400">
+		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
 			Fabric color
 		</p>
 		<div class="flex flex-wrap gap-2">
@@ -63,7 +63,11 @@
 					onclick={() => selectColor(color)}
 					title={color.name}
 					class="h-7 w-7 rounded-full border-2 transition-transform hover:scale-110"
-					style="background:{color.hex}; border-color: {config.seatColor === color.hex ? '#111' : 'transparent'}; outline: {config.seatColor === color.hex ? '2px solid #111' : 'none'}; outline-offset: 2px"
+					style="background:{color.hex}; border-color: {config.seatColor === color.hex
+						? '#111'
+						: 'transparent'}; outline: {config.seatColor === color.hex
+						? '2px solid #111'
+						: 'none'}; outline-offset: 2px"
 				></button>
 			{/each}
 		</div>
@@ -72,9 +76,7 @@
 
 	<!-- Leg Style section -->
 	<div class="border-b border-gray-200 px-5 py-4">
-		<p class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-gray-400">
-			Leg Style
-		</p>
+		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Leg Style</p>
 		<div class="flex gap-2">
 			{#each legStyles as style (style.id)}
 				<button
@@ -95,7 +97,7 @@
 
 	<!-- Export panel -->
 	<div class="border-t border-gray-200 px-5 py-4">
-		<p class="mb-3 text-[10px] font-semibold uppercase tracking-widest text-gray-400">
+		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
 			Your custom chair
 		</p>
 

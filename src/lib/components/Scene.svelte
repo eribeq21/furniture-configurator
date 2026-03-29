@@ -10,10 +10,13 @@
 	} from '@threlte/extras';
 
 	import ChairModel from './ChairModel.svelte';
+	import CameraControls from './CameraControls.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	interactivity();
 </script>
+
+<CameraControls />
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
 	<OrbitControls
@@ -25,8 +28,9 @@
 		maxDistance={10}
 		enableDamping
 		dampingFactor={0.05}
-		autoRotate
+		autoRotate={true}
 		autoRotateSpeed={0.5}
+		enabled={true}
 	/>
 </T.PerspectiveCamera>
 
