@@ -2,6 +2,7 @@
 	import { Canvas } from '@threlte/core';
 	import Scene from '$lib/components/Scene.svelte';
 	import Sidebar from '$lib/components/Sidebar.svelte';
+	import CameraPresets from '$lib/components/CameraPresets.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	function togglePillow() {
@@ -15,6 +16,9 @@
 		<Canvas shadows class="h-full w-full">
 			<Scene />
 		</Canvas>
+		<div class="absolute top-4 left-4 z-10">
+			<CameraPresets />
+		</div>
 
 		<!-- Pillow image toggle -->
 		<div class="absolute bottom-6 left-6">
