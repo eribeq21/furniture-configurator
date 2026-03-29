@@ -20,7 +20,7 @@
 	<!-- Header -->
 	<div class="border-b border-gray-200 px-5 py-4">
 		<h2 class="text-sm font-semibold text-gray-900">Lounge Chair</h2>
-		<p class="mt-0.5 text-xs text-gray-400">Configure your variant</p>
+		<p class="mt-0.5 text-xs text-gray-400">Customize your lounge chair</p>
 	</div>
 
 	<!-- Material section -->
@@ -71,7 +71,7 @@
 	<!-- Export panel -->
 	<div class="border-t border-gray-200 px-5 py-4">
 		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
-			Your config
+			Your custom chair
 		</p>
 		<div class="mb-1 flex justify-between text-xs">
 			<span class="text-gray-400">Material</span>
