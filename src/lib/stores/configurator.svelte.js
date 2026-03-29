@@ -3,5 +3,5 @@ export const config = $state({
 	colorName: 'Cream',
 	material: 'cotton',
 	selectedModel: 'pedestal',
-	pillow: false
+	cameraPosition: [4, 3, 4]
 });
