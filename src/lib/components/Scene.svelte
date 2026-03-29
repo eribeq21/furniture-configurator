@@ -1,7 +1,11 @@
 <script>
 	import { T } from '@threlte/core';
-	import { OrbitControls, Environment, ContactShadows } from '@threlte/extras';
+	import { OrbitControls, Environment, ContactShadows, Float, SoftShadows, interactivity } from '@threlte/extras';
 	import FurnitureModel from './FurnitureModel.svelte';
+	import { config } from '$lib/stores/configurator.svelte.js';
+
+	interactivity();
+
 </script>
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
@@ -19,11 +23,11 @@
 	/>
 </T.PerspectiveCamera>
 
+
+<SoftShadows size={25} samples={16} focus={0.5} />
+
 <Environment url="/monochrome_studio_04_4k.hdr" />
-<T.Mesh position={[0, -0.93, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-	<T.CircleGeometry args={[0.8, 64]} />
-	<T.MeshStandardMaterial color="#000000" transparent opacity={0.5} roughness={1} metalness={0} />
-</T.Mesh>
+
 <!-- Fake soft ground shadow -->
 <ContactShadows
 	position={[0, -1.01, 0]}
@@ -36,4 +40,11 @@
 />
 
 <!-- Position of the furniture -->
-<FurnitureModel position={[0, -1, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]} />
+<Float speed={0.6} floatIntensity={0.25}>
+	<FurnitureModel
+		position={[0, -1, 0]}
+		rotation={[0, 0, 0]}
+		scale={[1, 1, 1]}
+		seatColor={config.seatColor}
+	/>
+</Float>

@@ -1,6 +1,7 @@
 <script>
 	import { Canvas } from '@threlte/core';
 	import Scene from '$lib/components/Scene.svelte';
+	import Sidebar from '$lib/components/Sidebar.svelte';
 </script>
 
 <div class="flex h-screen w-screen overflow-hidden">
@@ -11,9 +12,7 @@
 		</Canvas>
 	</div>
 	<!-- Right: Sidebar -->
-	<div class="h-full w-80 border-l border-gray-300 bg-gray-100 p-4">
-		<!-- Sidebar content goes here -->
-		<h2 class="mb-4 text-lg font-bold">Sidebar</h2>
-		<p>Sidebar contet</p>
+	<div class="h-full w-72 border-l border-gray-200 bg-gray-50">
+		<Sidebar />
 	</div>
 </div>
