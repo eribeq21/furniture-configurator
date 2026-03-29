@@ -51,5 +51,6 @@
 		seatColor={config.seatColor}
 		material={config.material}
 		baseStyle={config.selectedModel}
+		pillow={config.pillow}
 	/>
 </Float>
