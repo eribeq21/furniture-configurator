@@ -4,7 +4,7 @@
 
   let { fallback, error, children, ref = $bindable(), ...props } = $props()
 
-  const gltf = useGltf('real_furniture.glb')
+  const gltf = useGltf('/real_furniture.glb')
 </script>
 
 <T.Group
@@ -18,20 +18,18 @@
     <T.Mesh
       castShadow
       receiveShadow
-      geometry={gltf.nodes.Cylinder.geometry}
+      geometry={gltf.nodes.chair_body.geometry}
+      material={gltf.nodes.chair_body.material}
+      position={[0, 2.03, 0]}
+    />
+    <T.Mesh
+      castShadow
+      receiveShadow
+      geometry={gltf.nodes.chair_stand.geometry}
       material={gltf.materials.Stand}
-      position={[0, 0.77, 0]}
+      position={[0, 0.75, 0]}
       scale={0.09}
-    >
-      <T.Mesh
-        castShadow
-        receiveShadow
-        geometry={gltf.nodes.Cube.geometry}
-        material={gltf.nodes.Cube.material}
-        position={[0, 13.85, 0]}
-        scale={10.87}
-      />
-    </T.Mesh>
+    />
   {:catch err}
     {@render error?.({ error: err })}
   {/await}
