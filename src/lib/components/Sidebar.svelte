@@ -37,7 +37,7 @@
 	<div class="border-b border-gray-200 px-5 py-4">
 		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">Material</p>
 		<div class="flex gap-2">
-			{#each ['cotton', 'leather', 'velvet'] as mat (mat)}
+			{#each ['cotton', 'leather', 'velvet', 'satin'] as mat (mat)}
 				<button
 					onclick={() => (config.material = mat)}
 					class="flex-1 rounded-lg border py-2 text-xs font-medium capitalize transition-colors"
