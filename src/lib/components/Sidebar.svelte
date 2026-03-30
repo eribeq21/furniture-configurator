@@ -21,6 +21,7 @@
 		{ hex: '#D6C6B2', name: 'Champagne' },
 		{ hex: '#8C6A43', name: 'Bronze' },
 		{ hex: '#6E4B3A', name: 'Walnut' },
+		{ hex: '#C9A227', name: 'Brushed Gold' },
 		{ hex: '#1F1F1F', name: 'Black' },
 		{ hex: '#444444', name: 'Graphite' }
 	];
