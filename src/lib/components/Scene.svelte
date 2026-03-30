@@ -53,6 +53,7 @@
 		rotation={[0, 0, 0]}
 		scale={[1, 1, 1]}
 		seatColor={config.seatColor}
+		standColor={config.standColor}
 		material={config.material}
 		baseStyle={config.selectedModel}
 		pillow={config.pillow}
