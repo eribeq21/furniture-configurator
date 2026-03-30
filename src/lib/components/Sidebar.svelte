@@ -17,12 +17,13 @@
 	];
 
 	const legColor = [
-		{ hex: '#C0C0C0', name: 'Silver' },
-		{ hex: '#D6C6B2', name: 'Champagne' },
-		{ hex: '#8C6A43', name: 'Bronze' },
-		{ hex: '#6E4B3A', name: 'Walnut' },
-		{ hex: '#1F1F1F', name: 'Black' },
-		{ hex: '#444444', name: 'Graphite' }
+		{ hex: '#F5F5F0', name: 'Soft White Oak' },   // matches Ivory Bouclé
+		{ hex: '#C2B6A3', name: 'Light Oak' },        // matches Warm Taupe
+		{ hex: '#8B7C6B', name: 'Weathered Oak' },    // matches Mushroom
+		{ hex: '#2B1F1A', name: 'Espresso Wood' },    // matches Espresso
+		{ hex: '#7A4E2D', name: 'Walnut' },           // matches Cognac
+		{ hex: '#4A4F3D', name: 'Olive Wood Stain' }, // matches Olive
+		{ hex: '#8C3F2A', name: 'Red Walnut' }       // matches Terracotta
 	];
 
 	function selectStandColor(color){
@@ -153,6 +154,11 @@
 		<div class="mb-1 flex justify-between text-xs">
 			<span class="text-gray-400">Color</span>
 			<span class="font-medium text-gray-800">{config.colorName}</span>
+		</div>
+		
+		<div class="mb-1 flex justify-between text-xs">
+			<span class="text-gray-400">Stand Color</span>
+			<span class="font-medium text-gray-800">{config.standColorName}</span>
 		</div>
 
 		<div class="mt-3 flex gap-2">
