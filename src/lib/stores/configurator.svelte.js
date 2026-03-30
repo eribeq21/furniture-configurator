@@ -5,6 +5,8 @@ export const config = $state({
 	selectedModel: 'pedestal',
 	pillow: false,
 	cameraPosition: [4, 3, 4],
+	standColor: '#C0C0C0',
+	standColorName: 'Silver',
 
 	// camera actions — filled in by ViewControls when it mounts
 	zoomIn: () => {},

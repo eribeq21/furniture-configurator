@@ -16,6 +16,20 @@
 		{ id: 'rotating', label: 'Rotating' }
 	];
 
+	const legColor = [
+		{ hex: '#C0C0C0', name: 'Silver' },
+		{ hex: '#D6C6B2', name: 'Champagne' },
+		{ hex: '#8C6A43', name: 'Bronze' },
+		{ hex: '#6E4B3A', name: 'Walnut' },
+		{ hex: '#1F1F1F', name: 'Black' },
+		{ hex: '#444444', name: 'Graphite' }
+	];
+
+	function selectStandColor(color){
+		config.standColor = color.hex;
+		config.standColorName = color.name;
+	}
+
 	function selectColor(color) {
 		config.seatColor = color.hex;
 		config.colorName = color.name;
@@ -92,6 +106,28 @@
 				</button>
 			{/each}
 		</div>
+	</div>
+
+	<!-- leg Color section -->
+	<div class="border-b border-gray-200 px-5 py-4">
+		<p class="mb-3 text-[10px] font-semibold tracking-widest text-gray-400 uppercase">
+			Stand color
+		</p>
+		<div class="flex flex-wrap gap-2">
+			{#each legColor as color (color.hex)}
+				<button
+					onclick={() => selectStandColor(color)}
+					title={color.name}
+					class="h-7 w-7 rounded-full border-2 transition-transform hover:scale-110"
+					style="background:{color.hex}; border-color: {config.standColor === color.hex
+						? '#111'
+						: 'transparent'}; outline: {config.standColor === color.hex
+						? '2px solid #111'
+						: 'none'}; outline-offset: 2px"
+				></button>
+			{/each}
+		</div>
+		<p class="mt-2 text-xs text-gray-500">{config.standColorName}</p>
 	</div>
 
 	<div class="flex-1"></div>

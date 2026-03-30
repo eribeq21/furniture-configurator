@@ -12,6 +12,7 @@
 		material = 'cotton',
 		baseStyle = 'pedestal',
 		pillow = false,
+		standColor = '#C0C0C0',
 		...props
 	} = $props();
 
@@ -140,20 +141,32 @@
 				castShadow
 				receiveShadow
 				geometry={model.nodes.pedestal_chair_stand.geometry}
-				material={model.materials['Stand.001']}
 				position={[0, 0.75, 0]}
 				scale={0.09}
-			/>
+			>
+				<T.MeshStandardMaterial
+					color={standColor}
+					roughness={0.5}
+					metalness={0.8}
+					envMapIntensity={1}
+				/>
+			</T.Mesh>
 		{:else if baseStyle === 'rotating'}
 			<T.Mesh
 				castShadow
 				receiveShadow
 				geometry={model.nodes.rotating_chair_stand.geometry}
-				material={model.nodes.rotating_chair_stand.material}
 				position={[0.08, 0.05, 0]}
 				rotation={[-Math.PI, 1.3, -Math.PI]}
 				scale={1.21}
-			/>
+			>
+				<T.MeshStandardMaterial
+					color={standColor}
+					roughness={0.5}
+					metalness={0.8}
+					envMapIntensity={1}
+				/>
+			</T.Mesh>
 		{/if}
 	{:catch err}
 		{@render error?.({ error: err })}
