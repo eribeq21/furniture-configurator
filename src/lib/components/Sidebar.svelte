@@ -2,12 +2,13 @@
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	const colors = [
-		{ hex: '#f0ece6', name: 'Cream' },
-		{ hex: '#2c2c2a', name: 'Charcoal' },
-		{ hex: '#534AB7', name: 'Indigo' },
-		{ hex: '#993C1D', name: 'Rust' },
-		{ hex: '#1D9E75', name: 'Forest' },
-		{ hex: '#D4537E', name: 'Rose' }
+		{ hex: '#E7DED2', name: 'Ivory Bouclé' },
+		{ hex: '#B8A999', name: 'Warm Taupe' },
+		{ hex: '#7A6A58', name: 'Mushroom' },
+		{ hex: '#3A312B', name: 'Espresso' },
+		{ hex: '#8A5A3B', name: 'Cognac' },
+		{ hex: '#6B7053', name: 'Olive' },
+		{ hex: '#A65E3B', name: 'Terracotta' }
 	];
 
 	const legStyles = [
