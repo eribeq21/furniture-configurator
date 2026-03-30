@@ -22,7 +22,8 @@
 	const materialProps = {
 		cotton: { roughness: 0.95, normalScale: 0.1, envMapIntensity: 0.2 },
 		leather: { roughness: 0.4, normalScale: 0.9, envMapIntensity: 1.4 },
-		velvet: { roughness: 0.8, normalScale: 0.5, envMapIntensity: 0.9 }
+		velvet: { roughness: 0.8, normalScale: 0.5, envMapIntensity: 0.9 },
+		satin: { roughness: 0.3, normalScale: 0.3, envMapIntensity: 1.2 }
 	};
 
 	function applySettings(texMap) {
@@ -56,6 +57,13 @@
 			{
 				roughnessMap: '/textures/velvet/roughness.jpg',
 				normalMap: '/textures/velvet/normal.jpg'
+			},
+			{ transform: applySettings }
+		),
+		satin: useTexture(
+			{
+				roughnessMap: '/textures/satin/roughness.jpg',
+				normalMap: '/textures/satin/normal.jpg'
 			},
 			{ transform: applySettings }
 		)
