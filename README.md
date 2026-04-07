@@ -1,42 +1,23 @@
-# sv
+# Furniture Configurator
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+An interactive 3D lounge chair configurator built with SvelteKit and Threlte (Three.js). Customize materials, colors, and leg styles in real time within an HDR-lit studio environment.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- **3D Real-Time Preview** — Rendered in-browser using Threlte/Three.js with HDR studio lighting
+- **Material Selection** — Choose between Cotton, Leather, Velvet, and Satin upholstery with full PBR texture sets
+- **Seat Colors** — 7 curated color options: Ivory Bouclé, Warm Taupe, Mushroom, Espresso, Cognac, Olive, and Terracotta
+- **Stand Colors** — Coordinating wood-tone finishes including Soft White Oak, Light Oak, Weathered Oak, Walnut, and more
+- **Leg Styles** — Switch between Pedestal and Rotating base designs
+- **Pillow Toggle** — Add or remove an optional lumbar pillow
+- **Camera Controls** — Zoom, orbit, and jump to preset camera angles for front, side, and top-down views
 
-```sh
-# create a new project
-npx sv create my-app
-```
+## Tech Stack
 
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.13.0 create --template minimal --no-types --add prettier eslint tailwindcss="plugins:forms,typography" --install npm furniture-configurator
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+| Layer | Technology |
+|---|---|
+| Framework | [SvelteKit](https://svelte.dev/docs/kit) |
+| 3D Rendering | [Threlte](https://threlte.xyz) + [Three.js](https://threejs.org) |
+| Styling | [Tailwind CSS](https://tailwindcss.com) v4 |
+| Icons | [Lucide Svelte](https://lucide.dev) |
+| Build Tool | [Vite](https://vite.dev) |
