@@ -60,7 +60,7 @@
 						config.pillow ? 'bg-black/45 text-white' : 'bg-black/30 text-white/65'
 					}`}
 				>
-					Pilli
+					Pillow
 				</div>
 			</button>
 		</div>

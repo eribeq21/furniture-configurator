@@ -167,11 +167,6 @@
 			>
 				Export PNG
 			</button>
-			<button
-				class="flex-1 rounded-lg border border-gray-200 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50"
-			>
-				Share link
-			</button>
 		</div>
 	</div>
 </div>
