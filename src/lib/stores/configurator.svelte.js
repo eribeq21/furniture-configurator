@@ -7,10 +7,12 @@ export const config = $state({
 	cameraPosition: [4, 3, 4],
 	standColor: '#C0C0C0',
 	standColorName: 'Silver',
+	isExportingPng: false,
 
 	// camera actions — filled in by ViewControls when it mounts
 	zoomIn: () => {},
 	zoomOut: () => {},
 	rotateLeft: () => {},
-	rotateRight: () => {}
+	rotateRight: () => {},
+	exportPng: async () => {}
 });

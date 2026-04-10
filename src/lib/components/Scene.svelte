@@ -11,12 +11,14 @@
 
 	import ChairModel from './ChairModel.svelte';
 	import CameraControls from './CameraControls.svelte';
+	import ExportController from './ExportController.svelte';
 	import { config } from '$lib/stores/configurator.svelte.js';
 
 	interactivity();
 </script>
 
 <CameraControls />
+<ExportController />
 
 <T.PerspectiveCamera makeDefault position={[4, 3, 4]} fov={50}>
 	<OrbitControls

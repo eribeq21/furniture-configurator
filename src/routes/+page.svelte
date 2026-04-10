@@ -1,5 +1,6 @@
 <script>
 	import { Canvas } from '@threlte/core';
+	import { WebGLRenderer } from 'three';
 	import Scene from '$lib/components/Scene.svelte';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import CameraPresets from '$lib/components/CameraPresets.svelte';
@@ -9,12 +10,22 @@
 	function togglePillow() {
 		config.pillow = !config.pillow;
 	}
+
+	function createRenderer(canvas) {
+		return new WebGLRenderer({
+			canvas,
+			powerPreference: 'high-performance',
+			antialias: true,
+			alpha: true,
+			preserveDrawingBuffer: true
+		});
+	}
 </script>
 
 <div class="flex h-screen w-screen overflow-hidden">
 	<!-- Left: Canvas -->
 	<div class="relative min-w-0 flex-1">
-		<Canvas shadows class="h-full w-full">
+		<Canvas shadows class="h-full w-full" {createRenderer}>
 			<Scene />
 		</Canvas>
 		<div class="absolute top-4 left-4 z-10">

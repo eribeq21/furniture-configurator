@@ -163,9 +163,11 @@
 
 		<div class="mt-3 flex gap-2">
 			<button
-				class="flex-1 rounded-lg border border-gray-200 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50"
+				onclick={config.exportPng}
+				disabled={config.isExportingPng}
+				class="flex-1 rounded-lg border border-gray-200 py-2 text-xs font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-60"
 			>
-				Export PNG
+				{config.isExportingPng ? 'Exporting...' : 'Export PNG'}
 			</button>
 		</div>
 	</div>
